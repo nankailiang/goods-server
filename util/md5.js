@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 
-module.exports = srt => {
+module.exports = str => {
     return crypto.createHash('md5')
     .update('nkl' + str)
     .digest('hex')
