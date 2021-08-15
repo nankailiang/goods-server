@@ -13,8 +13,10 @@ exports.login = async (req, res, next) => {
         // 请求响应
         delete user.password
         res.status(200).json({
-            ...user,
-            token
+            data: {
+                ...user,
+                token
+            }
         })
     } catch (err) {
         next(err)
@@ -33,7 +35,7 @@ exports.register = async (req, res, next) => {
         delete user.password
 
         // 请求响应
-        res.status(201).json({
+        res.status(200).json({
             user
         })
     } catch (err) {
